@@ -1,0 +1,4 @@
+django~=2.0
+celery[redis]~=4.2
+psycopg2~=2.7
+Pillow~=5.3
