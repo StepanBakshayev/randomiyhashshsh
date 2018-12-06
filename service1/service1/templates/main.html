@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+
+{% block content %}
+<a class="btn btn-primary" href="{% url 'add' %}">Добавить</a>
+{% if functions %}
+	<table class="table">
+		<thead>
+			<tr>
+				<th><input type="checkbox" disabled></th>
+				<th>Функция</th>
+				<th>График</th>
+				<th>Интервал t, дней</th>
+				<th>Шаг t, часы</th>
+				<th>Дата обработки</th>
+			</tr>
+		</thead>
+		<tbody>
+			{% for function in functions %}
+			<tr>
+				<td><input type="checkbox" disabled></td>
+				<td>{{ function.type }}</td>
+				<td>----</td>
+				<td>{{ function.inverval }}</td>
+				<td>{{ function.dt }}</td>
+				<td>....</td>
+			</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+{% else %}
+<p>Нет ни одной функции. Воспользуйтесь кнопкой "Добавить" для добавления функций.</p>
+{% endif %}
+{% endblock %}
